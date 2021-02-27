@@ -116,6 +116,11 @@ def click(game_board):
                     o_turn = False
                     game_board[i][j] = (x, y, 'o', False)
                 print()
+                print("Copied 3 lines form line 67 - 74 ")
+                for i in range(3):
+                    for j in range(3):
+                        print(game_board[i][j])
+
 
                 return
 
@@ -137,7 +142,7 @@ def has_won(game_board):
             return True
 
     # Checking main diagonal
-    # Your code here
+    # I added this code here
     if (game_board[0][0][2] == game_board[1][1][2] and game_board[2][2][2] == game_board[0][0][2]) and game_board[2][2][2] != "":
         display_message(game_board[0][0][2].upper() + " WON!!!!")
         return True
@@ -213,11 +218,11 @@ def main():
         else: continue
 
         render()
-
-        if has_drawn(game_board):
+        # I changed / fliped the draw and won
+        if has_won(game_board):
             break
 
-        elif has_won(game_board):
+        elif has_drawn(game_board):
             break
 
 
